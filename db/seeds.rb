@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Shelter.create(name: "Rescuers Up Over",
+               address: "246 Glenwood Dr",
+               city: "Boulder",
+               state: "CO",
+               zip: "80304")
+
+Shelter.create(name: "Forever Home Finder",
+               address: "246 Glenwood Dr",
+               city: "Boulder",
+               state: "CO",
+               zip: "80304")
