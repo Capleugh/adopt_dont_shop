@@ -13,7 +13,7 @@ Shelter.create(name: "Rescuers Up Over",
                zip: "80304")
 
 Shelter.create(name: "Forever Home Finder",
-               address: "246 Glenwood Dr",
+               address: "905 Manhattan Dr",
                city: "Boulder",
                state: "CO",
-               zip: "80304")
+               zip: "80303")

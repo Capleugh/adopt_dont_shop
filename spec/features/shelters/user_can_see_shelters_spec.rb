@@ -8,10 +8,10 @@ RSpec.describe "shelters index page", type: :feature do
                                state: "CO",
                                zip: "80304")
     shelter_2 = Shelter.create(name: "Rescuers Up Over",
-                               address: "246 Glenwood Dr",
+                               address: "905 Manhattan Dr",
                                city: "Boulder",
                                state: "CO",
-                               zip: "80304")
+                               zip: "80303")
 
     visit "/shelters"
 
