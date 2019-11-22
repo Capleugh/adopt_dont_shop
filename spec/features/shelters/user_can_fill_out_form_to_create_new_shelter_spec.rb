@@ -11,19 +11,21 @@ RSpec.describe "New Shelter", type: :feature do
 
         expect(current_path).to eq('/shelters/new')
 
-        fill_in 'Name', with: 'Rescuers Up Over'
-        fill_in 'Address', with: '246 Glenwood Dr'
+        fill_in 'Name', with: 'Humane Society'
+        fill_in 'Address', with: '547 Iris Ave'
         fill_in 'City', with: 'Boulder'
         fill_in 'State', with: 'CO'
         fill_in 'Zip', with: '80304'
         click_on 'Create Shelter'
 
         expect(current_path).to eq('/shelters')
-        expect(page).to have_content('Rescuers Up Over')
-        expect(page).to have_content('246 Glenwood Dr')
+
+        expect(page).to have_content('Humane Society')
+        expect(page).to have_content('547 Iris Ave')
         expect(page).to have_content('Boulder')
         expect(page).to have_content('CO')
         expect(page).to have_content('80304')
+        # save_and_open_page
       end
     end
   end
