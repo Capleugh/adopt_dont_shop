@@ -2,25 +2,33 @@ require 'rails_helper'
 
 RSpec.describe "New Shelter", type: :feature do
   describe "As a visitor" do
-    describe "when I visit the shelter index page" do
-      describe "then I see a link to create a new shelter" do
-        describe "when I click this link" do
-          it "I am taken to /shelters/new where I see a for for a new shelter" do
-            visit '/shelters'
+    describe "when I visit the new shelter form by clicking on the new shelter link on the index page" do
+      it "creates a new shelter" do
 
-            click_link 'New Shelter'
+        visit '/shelters'
 
-            expect(current_path).to eq('/shelters/new')
-          end
-        end
+        click_link 'New Shelter'
+
+        expect(current_path).to eq('/shelters/new')
+
+        fill_in 'Name', with: 'Rescuers Up Over'
+        fill_in 'Address', with: '246 Glenwood Dr'
+        fill_in 'City', with: 'Boulder'
+        fill_in 'State', with: 'CO'
+        fill_in 'Zip', with: '80304'
+        click_on 'Create Shelter'
+
+        expect(current_path).to eq('/shelters')
+        expect(page).to have_content('Rescuers Up Over')
+        expect(page).to have_content('246 Glenwood Dr')
+        expect(page).to have_content('Boulder')
+        expect(page).to have_content('CO')
+        expect(page).to have_content('80304')
       end
     end
   end
 end
 
-# Then I see a link to create a new Shelter
-# When I click this link
-# Then I am taken to '/shelters/new' where I  see a form for a new shelter
 #
 # When I fill out the form with a new shelter's:
 # - name
