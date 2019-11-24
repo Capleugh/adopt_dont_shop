@@ -35,7 +35,6 @@ RSpec.describe "Edit shelter" do
         expect(page).to_not have_content('Boulder')
         expect(page).to_not have_content('CO')
         expect(page).to_not have_content('80304')
-        save_and_open_page
       end
     end
   end
