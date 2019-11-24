@@ -5,14 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Shelter.create(name: "Rescuers Up Over",
+shelter_1 = Shelter.create(name: "Rescuers Up Over",
                address: "246 Glenwood Dr",
                city: "Boulder",
                state: "CO",
                zip: "80304")
 
-Shelter.create(name: "Forever Home Finder",
+shelter_2 = Shelter.create(name: "Forever Home Finder",
                address: "905 Manhattan Dr",
                city: "Boulder",
                state: "CO",
                zip: "80303")
+
+shelter_1.pets.create(image: 'https://i.ytimg.com/vi/7NYaGOyJiCY/maxresdefault.jpg',
+                      name: 'Stannislaus',
+                      approximate_age: 75,
+                      sex: 'male')
