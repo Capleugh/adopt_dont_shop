@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "shelters index page", type: :feature do
-  it "can see the name all of each shelter" do
+  it "can see the name of all shelters" do
     shelter_1 = Shelter.create(name: "Forever Home Finder",
                                address: "246 Glenwood Dr",
                                city: "Boulder",
