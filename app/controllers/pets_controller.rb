@@ -8,7 +8,10 @@ class PetsController < ApplicationController
       @pets = Pet.all
     # come back and revisit this to make sure you fully comprehend it
     end
+  end
 
-
+  def show
+    # require "pry"; binding.pry
+    @pet = Pet.find(params[:id])
   end
 end

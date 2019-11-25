@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "As a visitor" do
-  describe "when I visit the shelter pets index page" do
+  describe "wehn I vist the pets show page" do
     before(:each) do
       @shelter_1 = Shelter.create!(name: "Furever Home Finder",
                                  address: "907 Manhattan Dr",
@@ -24,7 +24,7 @@ RSpec.describe "As a visitor" do
                                       description: 'Very memeable. Hates vegetals.',
                                       approximate_age: 3,
                                       sex: 'male',
-                                      status: 'pending adoption')
+                                      status: 'adoptable')
       @pet_3 = @shelter_1.pets.create!(image: 'https://i.pinimg.com/originals/03/fe/7d/03fe7d86bcba1c66fa369c3188780e04.jpg',
                                       name: 'Bartok',
                                       description: "This bat-eared, yoda cat definitely won't destroy everything in your home.",
@@ -32,29 +32,22 @@ RSpec.describe "As a visitor" do
                                       sex: 'male',
                                       status: 'pending adoption')
 
-      visit "/shelters/#{@shelter_1.id}/pets"
+      visit "/pets/#{@pet_1.id}"
     end
 
-    it "I see a list of all pets that can be adopted from that shelter with that shelter_id" do
+    it "I see the pet with that id including their image, name, description, age, and status" do
       expect(page).to have_css("img[src*='#{@pet_1.image}']")
       expect(page).to have_content(@pet_1.name)
+      expect(page).to have_content(@pet_1.description)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
-      expect(page).to have_content(@pet_1.shelter.name)
+      expect(page).to have_content(@pet_1.status)
 
-
-      expect(page).to have_css("img[src*='#{@pet_3.image}']")
-      expect(page).to have_content(@pet_3.name)
-      expect(page).to have_content(@pet_3.approximate_age)
-      expect(page).to have_content(@pet_3.sex)
-      expect(page).to have_content(@pet_3.shelter.name)
-
-
-      expect(page).to_not have_css("img[src*='#{@pet_2.image}']")
-      expect(page).to_not have_content(@pet_2.name)
-      expect(page).to_not have_content(@pet_2.approximate_age)
-
-      expect(page).to_not have_content(@pet_2.shelter.name)
+      expect(page).to_not have_css("img[src*='#{@pet_3.image}']")
+      expect(page).to_not have_content(@pet_3.name)
+      expect(page).to_not have_content(@pet_3.description)
+      expect(page).to_not have_content(@pet_3.approximate_age)
+      expect(page).to_not have_content(@pet_3.status)
     end
   end
 end

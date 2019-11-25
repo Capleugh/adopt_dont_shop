@@ -4,7 +4,7 @@
     <h2><%= pet.name %></h2>
       <p><%= pet.approximate_age %></p>
       <p><%= pet.sex %></p>
-      <img src= <%= pet.image %> alt="Tiny bab">
+      <img src= <%= pet.image %>>
   <% end %>
 <% else %>
   <h1>All Pets</h1>
@@ -13,6 +13,6 @@
         <p><%= pet.approximate_age %></p>
         <p><%= pet.sex %></p>
         <p><%= pet.shelter.name %></p>
-        <img src= <%= pet.image %> alt="Tiny bab">
+        <img src= <%= pet.image %>>
     <% end %>
 <% end %>
