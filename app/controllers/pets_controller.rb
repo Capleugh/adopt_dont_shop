@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
   def index
-    # require "pry"; binding.pry
     if params[:shelter_id]
       @shelter = Shelter.find(params[:shelter_id])
       @pets = @shelter.pets
@@ -11,7 +10,10 @@ class PetsController < ApplicationController
   end
 
   def show
-    # require "pry"; binding.pry
     @pet = Pet.find(params[:id])
+  end
+
+  def new
+    @shelter = Shelter.find(params[:shelter_id])
   end
 end

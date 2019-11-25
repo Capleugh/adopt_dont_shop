@@ -6,6 +6,7 @@
       <p><%= pet.sex %></p>
       <img src= <%= pet.image %>>
   <% end %>
+  <%= link_to 'New Pet', "/shelters/#{@shelter.id}/pets/new" %>
 <% else %>
   <h1>All Pets</h1>
     <% @pets.each do |pet| %>

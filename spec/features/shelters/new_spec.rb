@@ -8,7 +8,6 @@ RSpec.describe "New Shelter", type: :feature do
         visit '/shelters'
 
         click_link 'New Shelter'
-
         expect(current_path).to eq('/shelters/new')
 
         fill_in 'Name', with: 'Humane Society'
@@ -30,15 +29,3 @@ RSpec.describe "New Shelter", type: :feature do
     end
   end
 end
-
-#
-# When I fill out the form with a new shelter's:
-# - name
-# - address
-# - city
-# - state
-# - zip
-# And I click the button to submit the form
-# Then a `POST` request is sent to '/shelters',
-# a new shelter is created,
-# and I am redirected to the Shelter Index page where I see the new Shelter listed.
