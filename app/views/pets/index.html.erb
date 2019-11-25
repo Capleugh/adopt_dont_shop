@@ -1,9 +1,18 @@
-<h1>All Pets</h1>
-
-<% @pets.each do |pet| %>
-  <h2><%= pet.name %></h2>
-    <p><%= pet.approximate_age %></p>
-    <p><%= pet.sex %></p>
-    <p><%= pet.shelter.name %></p>
-    <img src= <%= pet.image %> alt="Tiny bab">
+<% if @shelter %>
+  <h1>Available for Adoption at <%= @shelter.name %></h1>
+  <% @pets.each do |pet| %>
+    <h2><%= pet.name %></h2>
+      <p><%= pet.approximate_age %></p>
+      <p><%= pet.sex %></p>
+      <img src= <%= pet.image %> alt="Tiny bab">
+  <% end %>
+<% else %>
+  <h1>All Pets</h1>
+    <% @pets.each do |pet| %>
+      <h2><%= pet.name %></h2>
+        <p><%= pet.approximate_age %></p>
+        <p><%= pet.sex %></p>
+        <p><%= pet.shelter.name %></p>
+        <img src= <%= pet.image %> alt="Tiny bab">
+    <% end %>
 <% end %>
