@@ -1,18 +1,13 @@
 <% if @shelter %>
   <h1>Available for Adoption at <%= @shelter.name %></h1>
-  <% @pets.each do |pet| %>
-    <h2><%= pet.name %></h2>
-      <p><%= pet.approximate_age %></p>
-      <p><%= pet.sex %></p>
-      <img src= <%= pet.image %>>
-  <% end %>
+  <%= link_to 'New Pet', "/shelters/#{@shelter.id}/pets/new" %>
 <% else %>
   <h1>All Pets</h1>
-    <% @pets.each do |pet| %>
-      <h2><%= pet.name %></h2>
-        <p><%= pet.approximate_age %></p>
-        <p><%= pet.sex %></p>
-        <p><%= pet.shelter.name %></p>
-        <img src= <%= pet.image %>>
-    <% end %>
+<% end %>
+
+<% @pets.each do |pet| %>
+  <h2><%= pet.name %></h2>
+    <p><%= pet.approximate_age %></p>
+    <p><%= pet.sex %></p>
+    <img src= <%= pet.image %>>
 <% end %>

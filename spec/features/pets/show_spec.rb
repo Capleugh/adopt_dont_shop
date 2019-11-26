@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe "As a visitor" do
   describe "wehn I vist the pets show page" do
     before(:each) do
-      @shelter_1 = Shelter.create!(name: "Furever Home Finder",
-                                 address: "907 Manhattan Dr",
-                                 city: "Dallas",
+      @shelter_1 = Shelter.create!(name: "New Shelter",
+                                 address: "908 Beltline Dr",
+                                 city: "Richardson",
                                  state: "TX",
-                                 zip: "75243")
+                                 zip: "75081") 
       @shelter_2 = Shelter.create!(name: "Denver Cat Company",
                                  address: "3929 Tennyson St",
                                  city: "Denver",
