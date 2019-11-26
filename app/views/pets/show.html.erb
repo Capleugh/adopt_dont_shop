@@ -4,4 +4,5 @@
   <p><%= @pet.sex %></p>
   <p><%= @pet.status %></p>
   <img src= <%= @pet.image %>>
-<%= link_to 'Update', "/pets/#{@pet.id}/edit" %> 
+<%= link_to 'Update', "/pets/#{@pet.id}/edit" %>
+<%= button_to 'Delete', "/pets/#{@pet.id}", method: :delete %>

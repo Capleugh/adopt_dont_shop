@@ -4,16 +4,16 @@ RSpec.describe "As a visitor" do
   describe "wehn I vist the pets show page" do
     it "when I click the link to edit pet, I am taken to a form to edit pet's data including image, name, description, age, and sex" do
       shelter_1 = Shelter.create!(name: "New Shelter",
-                                 address: "908 Beltline Dr",
-                                 city: "Richardson",
-                                 state: "TX",
-                                 zip: "75081")
+                                  address: "908 Beltline Dr",
+                                  city: "Richardson",
+                                  state: "TX",
+                                  zip: "75081")
       pet_1 = shelter_1.pets.create!(image: 'https://s3.amazonaws.com/playbarkrun/wp-content/uploads/2018/05/11154028/1920px-V%C3%A4stg%C3%B6taspets_hane_5_%C3%A5r.jpg',
-                                      name: 'Larry',
-                                      description: 'Sweet, pint-sized ball of fluff and love.',
-                                      approximate_age: 5,
-                                      sex: 'female',
-                                      status: 'adoptable')
+                                     name: 'Larry',
+                                     description: 'Sweet, pint-sized ball of fluff and love.',
+                                     approximate_age: 5,
+                                     sex: 'female',
+                                     status: 'adoptable')
       visit "/pets/#{pet_1.id}"
 
       click_link 'Update'

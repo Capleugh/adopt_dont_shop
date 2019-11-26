@@ -12,7 +12,6 @@ RSpec.describe "Delete Shelter" do
       visit "/shelters/#{shelter_1.id}"
 
       click_button 'Delete'
-
       expect(current_path).to eq('/shelters')
 
       expect(page).to_not have_content(shelter_1.name)
