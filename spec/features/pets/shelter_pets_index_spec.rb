@@ -7,7 +7,7 @@ RSpec.describe "As a visitor" do
                                  address: "908 Beltline Dr",
                                  city: "Richardson",
                                  state: "TX",
-                                 zip: "75081")  
+                                 zip: "75081")
       @shelter_2 = Shelter.create!(name: "Denver Cat Company",
                                  address: "3929 Tennyson St",
                                  city: "Denver",
