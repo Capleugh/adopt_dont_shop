@@ -21,7 +21,7 @@ shelter_2 = Shelter.create(name: "Forever Home Finder",
                zip: "80303")
 
 shelter_2.pets.create(image: 'https://i.ytimg.com/vi/7NYaGOyJiCY/maxresdefault.jpg',
-                      name: 'Stannislaus',
+                      name: 'Stanislaus',
                       description: "Very lorge boy! Adopter must have a stable as he does not do well indoors. We're honestly all pretty terrified of him. Someone please come adopt him. We're begging you. Please...",
                       approximate_age: 75,
                       sex: 'male',
