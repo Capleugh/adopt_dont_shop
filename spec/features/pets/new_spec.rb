@@ -14,13 +14,13 @@ RSpec.describe "As a visitor" do
       click_link 'New Pet'
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets/new")
 
-      image = 'https://i.pinimg.com/originals/f8/27/ed/f827ed9a704146f65b96226f430abf3c.png'
+
       name = 'Smudge'
       description = 'Very memeable. Hates vegetals.'
       approximate_age = 4
       sex = 'male'
 
-      fill_in 'image', with: image
+      fill_in 'image', with: 'https://i.pinimg.com/originals/f8/27/ed/f827ed9a704146f65b96226f430abf3c.png'
       fill_in 'name', with: name
       fill_in 'description', with: description
       fill_in 'approximate_age', with: approximate_age
@@ -30,7 +30,7 @@ RSpec.describe "As a visitor" do
 
       expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
 
-      expect(page).to have_css("img[src *= 'f827ed9a704146f65b96226f430abf3c.png']")
+      expect(page).to have_css("img[src *= 'https://i.pinimg.com/originals/f8/27/ed/f827ed9a704146f65b96226f430abf3c.png']")
       expect(page).to have_content(name)
       expect(page).to have_content(approximate_age)
       expect(page).to have_content(sex)

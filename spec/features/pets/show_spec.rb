@@ -7,7 +7,7 @@ RSpec.describe "As a visitor" do
                                  address: "908 Beltline Dr",
                                  city: "Richardson",
                                  state: "TX",
-                                 zip: "75081") 
+                                 zip: "75081")
       @shelter_2 = Shelter.create!(name: "Denver Cat Company",
                                  address: "3929 Tennyson St",
                                  city: "Denver",
@@ -35,7 +35,7 @@ RSpec.describe "As a visitor" do
       visit "/pets/#{@pet_1.id}"
     end
 
-    it "I see the pet with that id including their image, name, description, age, and status" do
+    it "I see the pet with that id including their image, name, description, age, sex, and status" do
       expect(page).to have_css("img[src*='#{@pet_1.image}']")
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_1.description)
