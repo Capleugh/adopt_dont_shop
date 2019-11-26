@@ -20,20 +20,25 @@ RSpec.describe "As a visitor" do
       approximate_age = 4
       sex = 'male'
 
-      fill_in 'Image', with: image
-      fill_in 'Name', with: name
-      fill_in 'Description', with: description
-      fill_in 'Approximate age', with: approximate_age
-      fill_in 'Sex', with: sex
+      fill_in 'image', with: image
+      fill_in 'name', with: name
+      fill_in 'description', with: description
+      fill_in 'approximate_age', with: approximate_age
+      fill_in 'sex', with: sex
 
-      
       click_button 'Add pet'
-      expect(current_path).to eq("shelters/#{shelter_1.id}/pets")
 
-      expect(page).to have_css("img[src*='#{image}']")
+      expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+
+      expect(page).to have_css("img[src *= 'f827ed9a704146f65b96226f430abf3c.png']")
       expect(page).to have_content(name)
-      expect(page).to have_content(description)
       expect(page).to have_content(approximate_age)
       expect(page).to have_content(sex)
+
+      new_pet = Pet.last
+
+      visit "/pets/#{new_pet.id}"
+
+      expect(page).to have_content(description)
   end
 end
