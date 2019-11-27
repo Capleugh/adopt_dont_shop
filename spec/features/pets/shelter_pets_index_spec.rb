@@ -62,5 +62,11 @@ RSpec.describe "As a visitor" do
       click_link "#{@shelter_1.name}"
       expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     end
+
+    it "when I click on the name of a pet, I am taken to that pet's show page" do
+
+      click_link "#{@pet_1.name}"
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+    end
   end
 end
