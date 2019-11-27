@@ -6,6 +6,7 @@
         <p>Age: <%= pet.approximate_age %></p>
         <p>Sex:<%= pet.sex %></p>
         <img src= <%= pet.image %>
+        <p><%= link_to 'Update', "/shelters/#{pet.shelter.id}/pets/#{pet.id}/edit" %></p>
     <% end %>
 <% else %>
   <h1>All Pets</h1>
@@ -15,5 +16,6 @@
         <p>Sex:<%= pet.sex %></p>
         <p>Available at: <%= pet.shelter.name %></p>
         <img src= <%= pet.image %>>
+        <p><%= link_to 'Update', "/pets/#{pet.id}/edit" %></p>
   <% end %>
 <% end %>
