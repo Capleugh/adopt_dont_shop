@@ -4,8 +4,8 @@
     <% @pets.each do |pet| %>
       <h2>Name: <%= pet.name %></h2>
         <p>Age: <%= pet.approximate_age %></p>
-        <p>Sex:<%= pet.sex %></p>
-        <img src= <%= pet.image %>
+        <p>Sex: <%= pet.sex %></p>
+        <img src= <%= pet.image %>><br/>
         <p><%= link_to 'Update', "/shelters/#{pet.shelter.id}/pets/#{pet.id}/edit" %></p>
     <% end %>
 <% else %>
@@ -13,9 +13,9 @@
     <% @pets.each do |pet| %>
       <h2>Name: <%= pet.name %></h2>
         <p>Age: <%= pet.approximate_age %></p>
-        <p>Sex:<%= pet.sex %></p>
+        <p>Sex: <%= pet.sex %></p>
         <p>Available at: <%= pet.shelter.name %></p>
-        <img src= <%= pet.image %>>
-        <p><%= link_to 'Update', "/pets/#{pet.id}/edit" %></p>
+        <img src= <%= pet.image %>><br/>
+        <p><%= link_to 'Update', "/pets/#{pet.id}/edit" %> <%= button_to 'Delete', "/pets/#{pet.id}", method: :delete %></p>
   <% end %>
 <% end %>
