@@ -54,5 +54,10 @@ RSpec.describe "As a visitor", type: :feature do
       click_link "#{@shelter_1.name}"
       expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     end
+
+    it "I can click a pet index link which takes me to the pet index" do
+      click_link 'Pet Index'
+      expect(current_path).to eq("/pets")
+    end
   end
 end

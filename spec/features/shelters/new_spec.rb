@@ -20,11 +20,6 @@ RSpec.describe "New Shelter", type: :feature do
         expect(current_path).to eq('/shelters')
 
         expect(page).to have_content('Humane Society')
-        expect(page).to have_content('547 Iris Ave')
-        expect(page).to have_content('Boulder')
-        expect(page).to have_content('CO')
-        expect(page).to have_content('80304')
-        # save_and_open_page
       end
     end
   end
