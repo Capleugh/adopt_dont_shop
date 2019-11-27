@@ -5,7 +5,6 @@ class PetsController < ApplicationController
       @pets = @shelter.pets
     else
       @pets = Pet.all
-    # come back and revisit this to make sure you fully comprehend it
     end
   end
 
