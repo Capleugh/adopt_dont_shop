@@ -20,16 +20,7 @@ RSpec.describe "As a visitor" do
         expect(current_path).to eq('/shelters')
 
         expect(page).to_not have_content(shelter_1.name)
-        expect(page).to_not have_content(shelter_1.address)
-        expect(page).to_not have_content(shelter_1.city)
-        expect(page).to_not have_content(shelter_1.state)
-        expect(page).to_not have_content(shelter_1.zip)
-
         expect(page).to have_content(shelter_2.name)
-        expect(page).to have_content(shelter_2.address)
-        expect(page).to have_content(shelter_2.city)
-        expect(page).to have_content(shelter_2.state)
-        expect(page).to have_content(shelter_2.zip)
     end
 
     it "can delete shelters with pets" do
@@ -56,16 +47,7 @@ RSpec.describe "As a visitor" do
       expect(current_path).to eq("/shelters")
 
       expect(page).to_not have_content(shelter_1.name)
-      expect(page).to_not have_content(shelter_1.address)
-      expect(page).to_not have_content(shelter_1.city)
-      expect(page).to_not have_content(shelter_1.state)
-      expect(page).to_not have_content(shelter_1.zip)
-
       expect(page).to have_content(shelter_2.name)
-      expect(page).to have_content(shelter_2.address)
-      expect(page).to have_content(shelter_2.city)
-      expect(page).to have_content(shelter_2.state)
-      expect(page).to have_content(shelter_2.zip)
     end
   end
 end

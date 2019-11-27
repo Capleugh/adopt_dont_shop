@@ -56,5 +56,27 @@ RSpec.describe "As a visitor" do
 
       expect(page).to_not have_content(@pet_2.shelter.name)
     end
+
+    it "when I click on the name of a shelter, I am taken to that shelter's show page" do
+
+      click_link "#{@shelter_1.name}"
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+    end
+
+    it "when I click on the name of a pet, I am taken to that pet's show page" do
+
+      click_link "#{@pet_1.name}"
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+    end
+
+    it "I can click a pet index link which takes me to the pet index" do
+      click_link 'Pet Index'
+      expect(current_path).to eq("/pets")
+    end
+
+    it "I can click a shelter index link which takes me to the shelter index" do
+      click_link 'Shelter Index'
+      expect(current_path).to eq("/shelters")
+    end
   end
 end

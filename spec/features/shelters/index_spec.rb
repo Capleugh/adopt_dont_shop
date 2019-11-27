@@ -24,7 +24,7 @@ RSpec.describe "As a visitor", type: :feature do
     end
 
     it "I can see links to edit each shelter and clicking that first link redirects me to the edit form" do
-      
+
       first(:link, 'Edit').click
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
 
@@ -47,6 +47,22 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to_not have_content('Santa Fe')
       expect(page).to_not have_content('NM')
       expect(page).to_not have_content('80859')
+    end
+
+    it "when I click on the name of a shelter, I am taken to that shelter's show page" do
+
+      click_link "#{@shelter_1.name}"
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+    end
+
+    it "I can click a pet index link which takes me to the pet index" do
+      click_link 'Pet Index'
+      expect(current_path).to eq("/pets")
+    end
+
+    it "I can click a shelter index link which takes me to the shelter index" do
+      click_link 'Shelter Index'
+      expect(current_path).to eq("/shelters")
     end
   end
 end

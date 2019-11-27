@@ -49,5 +49,15 @@ RSpec.describe "As a visitor" do
       expect(page).to_not have_content(@pet_3.approximate_age)
       expect(page).to_not have_content(@pet_3.status)
     end
+
+    it "I can click a pet index link which takes me to the pet index" do
+      click_link 'Pet Index'
+      expect(current_path).to eq("/pets")
+    end
+
+    it "I can click a shelter index link which takes me to the shelter index" do
+      click_link 'Shelter Index'
+      expect(current_path).to eq("/shelters")
+    end
   end
 end
