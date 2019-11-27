@@ -108,5 +108,12 @@ RSpec.describe "As a visitor" do
       click_link 'Pet Index'
       expect(current_path).to eq("/pets")
     end
+
+    it "when I visit the pets index page, I can click a shelter index link which takes me to the shelter index" do
+      visit '/pets'
+
+      click_link 'Shelter Index'
+      expect(current_path).to eq("/shelters")
+    end
   end
 end

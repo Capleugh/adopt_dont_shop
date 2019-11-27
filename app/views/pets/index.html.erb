@@ -11,7 +11,7 @@
 <% else %>
   <h1>All Pets</h1>
     <% @pets.each do |pet| %>
-      <h2>Name: <%= link_to "#{pet.name}", "pets/#{pet.id}" %></h2>
+        <h4>Name: <%= link_to "#{pet.name}", "pets/#{pet.id}" %></h4>
         <p>Age: <%= pet.approximate_age %></p>
         <p>Sex: <%= pet.sex %></p>
         <p>Available at: <%= link_to "#{pet.shelter.name}", "shelters/#{pet.shelter.id}" %></p>
