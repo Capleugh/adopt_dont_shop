@@ -31,7 +31,7 @@ RSpec.describe "shelters show page", type: :feature do
 
 
   it "when I visit the shelter show page, I can click a pets at shelter link which takes me to that shelter's pets page" do
-    click_link "Pets at #{@shelter_1.name}"
+    click_link "#{@shelter_1.name}"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
   end
 end

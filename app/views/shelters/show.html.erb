@@ -1,4 +1,4 @@
-<%= link_to "Pets at #{@shelter.name}", "/shelters/#{@shelter.id}/pets" %>
+<p>Pets at <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}/pets" %></p>
 <h1><%= @shelter.name %></h1>
 <p>
   <%= @shelter.address %><br/>
