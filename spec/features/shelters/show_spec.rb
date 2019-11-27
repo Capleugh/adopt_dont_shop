@@ -42,4 +42,18 @@ RSpec.describe "shelters show page", type: :feature do
     click_link 'Shelter Index'
     expect(current_path).to eq("/shelters")
   end
+
+
+  it "when I visit the shelter show page, I can click a pets at shelter link which takes me to that shelter's pets page" do
+    shelter_1 = Shelter.create(name: "Forever Home Finder",
+                               address: "246 Glenwood Dr",
+                               city: "Boulder",
+                               state: "CO",
+                               zip: "80304")
+
+    visit "/shelters/#{shelter_1.id}"
+
+    click_link "Pets at #{shelter_1.name}"
+    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
+  end
 end
